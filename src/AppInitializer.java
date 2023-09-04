@@ -19,10 +19,14 @@ public class AppInitializer {
         int userInput = input.nextInt();
         switch (userInput) {
             case 1:
-                login();
+                if (login()) {
+                    openDashBoard();
+                }
                 break;
             case 2:
-                register();
+                if (register()) {
+                    openDashBoard();
+                }
                 break;
             case 3:
                 break;
@@ -33,10 +37,27 @@ public class AppInitializer {
 //        Programme initialization
     }
 
+
     //    Login Process
     public static boolean login() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Insert Your Email");
+        String email = input.nextLine();
+        System.out.println("Insert your Password");
+        String password = input.nextLine();
 
-
+        for (int i = 0; i < users.length; i++) {
+            if (users[i][0].equals(email)) {
+                if (users[i][1].equals(password)) {
+                    System.out.println("Welcome");
+                    return true;
+                } else {
+                    System.out.println("Wrong Password ");
+                    return false;
+                }
+            }
+        }
+        System.out.println("404 Not found");
         return false;
     }
 
@@ -70,4 +91,11 @@ public class AppInitializer {
     }
 
     //    Register Process
+
+    //    Dashboard process
+
+    public static void openDashBoard() {
+        System.out.println("This is DashBoard");
+    }
+    //    Dashboard process
 }
