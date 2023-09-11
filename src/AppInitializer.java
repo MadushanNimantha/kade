@@ -29,8 +29,10 @@ public class AppInitializer {
                 }
                 break;
             case 3:
-                break;
+                System.out.println("Good Bye");
+                return;
             default:
+                System.out.println("Wrong \uD83D\uDE1E");
                 return;
         }
 
@@ -47,7 +49,7 @@ public class AppInitializer {
         String password = input.nextLine();
 
         for (int i = 0; i < users.length; i++) {
-            if (users[i][0].equals(email)) {
+            if (users[i][0] != null && users[i][0].equals(email)) {
                 if (users[i][1].equals(password)) {
                     System.out.println("Welcome");
                     return true;
