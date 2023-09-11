@@ -8,33 +8,39 @@ public class AppInitializer {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        boolean exitState = false;
         //        Programme initialization
         String[] initializePageQuestions = {
                 "1) Do you want to login?",
                 "2) Are you new to here?",
-                "3) Do you want to exit the page?"};
-        for (String question : initializePageQuestions) {
-            System.out.println(question);
+                "3) Do you want to exit the page?"
+        };
+
+        while (!exitState) {
+            for (String question : initializePageQuestions) {
+                System.out.println(question);
+            }
+            int userInput = input.nextInt();
+            switch (userInput) {
+                case 1:
+                    if (login()) {
+                        openDashBoard();
+                    }
+                    break;
+                case 2:
+                    if (register()) {
+                        openDashBoard();
+                    }
+                    break;
+                case 3:
+                    System.out.println("Good Bye");
+                    return;
+                default:
+                    System.out.println("Wrong \uD83D\uDE1E");
+                    return;
+            }
         }
-        int userInput = input.nextInt();
-        switch (userInput) {
-            case 1:
-                if (login()) {
-                    openDashBoard();
-                }
-                break;
-            case 2:
-                if (register()) {
-                    openDashBoard();
-                }
-                break;
-            case 3:
-                System.out.println("Good Bye");
-                return;
-            default:
-                System.out.println("Wrong \uD83D\uDE1E");
-                return;
-        }
+
 
 //        Programme initialization
     }
