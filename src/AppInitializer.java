@@ -25,6 +25,8 @@ public class AppInitializer {
             int userInput = input.nextInt();
             switch (userInput) {
                 case 1:
+                    users[0][0] = "madu";
+                    users[0][1] = "123";
                     if (login()) {
                         printUi("Dashboard");
                         openDashBoard();
@@ -33,8 +35,10 @@ public class AppInitializer {
                     break;
                 case 2:
                     if (register()) {
+                        printUi("Dashboard");
                         openDashBoard();
                     }
+                    printUi("Dashboard");
                     break;
                 case 3:
                     System.out.println("Good Bye");
