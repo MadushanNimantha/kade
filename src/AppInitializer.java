@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class AppInitializer {
@@ -24,8 +26,10 @@ public class AppInitializer {
             switch (userInput) {
                 case 1:
                     if (login()) {
+                        printUi("Dashboard");
                         openDashBoard();
                     }
+                    printUi("Application");
                     break;
                 case 2:
                     if (register()) {
@@ -48,6 +52,7 @@ public class AppInitializer {
 
     //    Login Process
     public static boolean login() {
+        printUi("Login");
         Scanner input = new Scanner(System.in);
         System.out.println("Insert Your Email");
         String email = input.nextLine();
@@ -106,4 +111,18 @@ public class AppInitializer {
         System.out.println("This is DashBoard");
     }
     //    Dashboard process
+
+    public static void printUi(String position) {
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm-ss");
+
+        String simpleDate = dateFormat.format(date);
+        String simpleTime = timeFormat.format(date);
+        System.out.println("========" + simpleDate + "========" + simpleTime + "==>" + position);
+//        System.out.println("===========================@System===============================");
+
+    }
+
+
 }
