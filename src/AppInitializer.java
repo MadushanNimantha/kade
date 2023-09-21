@@ -113,6 +113,20 @@ public class AppInitializer {
 
     public static void openDashBoard() {
         System.out.println("This is DashBoard");
+        String dashBoardQuestions[] = {
+                "1) Customer Management",
+                "2)Item Management",
+                "3)Order Management",
+                "4)Logout"
+        };
+        while (true) {
+            for (String questions : dashBoardQuestions
+            ) {
+                System.out.println(questions);
+                return;
+            }
+
+        }
     }
     //    Dashboard process
 
