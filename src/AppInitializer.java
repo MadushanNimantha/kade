@@ -112,6 +112,7 @@ public class AppInitializer {
     //    Dashboard process
 
     public static void openDashBoard() {
+        Scanner input = new Scanner(System.in);
         System.out.println("This is DashBoard");
         String dashBoardQuestions[] = {
                 "1) Customer Management",
@@ -125,9 +126,30 @@ public class AppInitializer {
                 System.out.println(questions);
                 return;
             }
+            int userInput = input.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    customerManagement();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    return;
+            }
 
         }
     }
+
+//    Customer process
+    public static void customerManagement(){
+
+    }
+//    Customer process
     //    Dashboard process
 
     public static void printUi(String position) {
