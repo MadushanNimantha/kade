@@ -145,9 +145,9 @@ public class AppInitializer {
         }
     }
 
-//    Customer process
-    public static void customerManagement(){
-
+    //    Customer process
+    public static void customerManagement() {
+//    CRUD
     }
 //    Customer process
     //    Dashboard process
