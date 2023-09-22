@@ -115,7 +115,7 @@ public class AppInitializer {
         Scanner input = new Scanner(System.in);
         System.out.println("This is DashBoard");
         String dashBoardQuestions[] = {
-                "1) Customer Management",
+                "1)Customer Management",
                 "2)Item Management",
                 "3)Order Management",
                 "4)Logout"
@@ -148,6 +148,39 @@ public class AppInitializer {
     //    Customer process
     public static void customerManagement() {
 //    CRUD
+        Scanner input = new Scanner(System.in);
+        System.out.println("This is DashBoard");
+        String customerQuestions[] = {
+                "1)Save Customer",
+                "2)Find Customer",
+                "3)Update Customer",
+                "4)Delete Customer",
+                "5)Find All Customer",
+                "6)Back to home"
+        };
+
+        while (true) {
+            for (String questions : customerQuestions) {
+                System.out.println(questions);
+            }
+            int userInput = input.nextInt();
+            switch (userInput) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 //    Customer process
     //    Dashboard process
